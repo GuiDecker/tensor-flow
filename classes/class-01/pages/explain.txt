@@ -1,0 +1,28 @@
+index.js -> resposible for call all the layers
+
+workers =>{
+  -> PROCESSO EM SEGUNDO PLANO
+  -> toda logica pesada(que envolve CPU)
+  -> tudo que pode travar a tela, EX:(for loop, machine learning, AI, processamenteo de WEB CAM)
+  -> chama as regras de negocio da service
+}
+
+services => {
+  -> toda logica de negocio
+  -> toda chamada externa (api, arquivos, Db)
+}
+
+view =>{
+  -> toda iteração com o DOM (com HTML)
+}
+
+controller =>{
+  -> intermediaria entre (services e/ou workers) e views
+}
+
+factories -> {
+  -> factory importa as dependencias
+  -> cria o objeto final para fazermos as chamadas
+  -> retorna a função para o index que recebe tudo e inicializa  o fluxo do componente
+
+}
